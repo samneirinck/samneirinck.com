@@ -1,15 +1,15 @@
-+++
-categories = ["Sonos"]
-date = "2015-06-20"
-description = "Creating a Sonos library in C#"
-featured = "hero.jpg"
-featuredalt = "Pic 3"
-featuredpath = "date"
-linktitle = ""
-title = "SonosSharp, a new beginning"
-type = "post"
-
-+++
+---
+categories:
+  - "Sonos"
+date: "2015-06-20"
+description: "Creating a Sonos library in C#"
+featured: "hero.jpg"
+featuredpath: "date"
+title: "SonosSharp, a new beginning"
+type: "post"
+aliases:
+  - /2015/06/20/sonossharp-a-new-beginning/
+---
 
 Since I bought my first [Sonos](http://www.sonos.com/) equipment piece, the Playbar, I've been intrigued by the system. It's so simple to set up and use, and the apps (on Android, iOS and Windows) are a breeze to work with.
 

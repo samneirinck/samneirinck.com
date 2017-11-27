@@ -1,12 +1,13 @@
-+++
-categories = ["Sonos"]
-date = "2015-07-25"
-description = "A look at the Sonos protocol"
-linktitle = ""
-title = "A look behind the scenes"
-type = "post"
-
-+++
+---
+categories:
+  - "Sonos"
+date: "2015-07-25"
+description: "A look at the Sonos protocol"
+title: "A look behind the scenes"
+type: "post"
+aliases:
+  - /2015/07/25/a-look-at-sonos-protocol/
+---
 
 While Sonos has no official API, it uses open technologies for the apps to communicate with the devices, namely Universal Plug and Play, UPnP. It's highly likely that you have a device at home supporting UPnP. Things like routers, TV's and set-top boxes all have UPnP services.
 

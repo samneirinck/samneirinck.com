@@ -123,3 +123,6 @@ pluralizeListTitles = false
   # Email
   
 email = "info@samneirinck.com"
+
+[permalinks]
+  blog = "/:year/:month/:title"
