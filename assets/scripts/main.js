@@ -1,4 +1,5 @@
 const terminal = document.getElementsByTagName("main")[0];
+const terminalContent = document.getElementsByClassName("terminal-content")[0];
 const promptInput = document.getElementById("prompt");
 const promptSection = document.getElementById("promptSection");
 document.getElementById('closeTerminal').addEventListener('click', () => {
@@ -40,9 +41,11 @@ document.getElementById("promptForm").addEventListener("submit", (event) => {
 	if (output) {
 		section.appendChild(output);
 	}
-	terminal.insertBefore(section, promptSection);
+	terminalContent.appendChild(section);
 	
 	promptInput.value = '';
 	event.preventDefault();
 });
+
+
 
