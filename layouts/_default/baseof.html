@@ -2,7 +2,9 @@
 <html lang="en">
 	<head>
 		<title>Sam Neirinck</title>
-		<link rel="stylesheet" href="css/style.css">
+		{{ with resources.Get "css/style.css" }}
+		<link rel="stylesheet" href="{{ .RelPermalink }}">
+		{{ end }}
 	</head>
 	<body>
 		{{- block "main" . }}{{- end }}
@@ -16,7 +18,7 @@
 			<section>
 				<h1>whoami</h1>
 				<p>
-					Sam Neirinck - Software Engineer
+					Sam Neirinck - Software Developer
 				</p>
 			</section>
 			<section>
@@ -35,6 +37,8 @@
 				</form>
 			</section>
 		</main>
-		<script src="scripts/main.js"></script>
+		{{ with resources.Get "scripts/main.js" }}
+		<script src="{{ .RelPermalink }}"></script>
+		{{ end }}
 	</body>
 </html>
