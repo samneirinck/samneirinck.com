@@ -40,12 +40,20 @@ document.getElementById("promptForm").addEventListener("submit", (event) => {
 	}
 	if (output) {
 		section.appendChild(output);
+
+
+
+
 	}
 	terminalContent.appendChild(section);
+	scrollToBottom(terminalContent);
 	
 	promptInput.value = '';
 	event.preventDefault();
 });
 
-
-
+function scrollToBottom(el) {
+	requestAnimationFrame(() => {
+		el.scrollTop = el.scrollHeight;
+	});
+}
