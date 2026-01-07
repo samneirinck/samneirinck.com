@@ -1,6 +1,6 @@
 @font-face {
-   font-family: 'JetBrains Mono';
-   src: url('//fonts/JetBrainsMono-Regular.woff2');
+  font-family: "JetBrains Mono";
+  src: url("//fonts/JetBrainsMono-Regular.woff2");
 }
 
 :root {
@@ -8,24 +8,24 @@
 }
 
 html {
-   font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrains Mono", monospace;
 }
 
 body {
-   background-color: #1f2026;
-   color: var(--foreground);
-   display: grid;
-   justify-content: center;
-   width: 100%;
+  background-color: #1f2026;
+  color: var(--foreground);
+  display: grid;
+  justify-content: center;
+  width: 100%;
 }
 
 main {
-	background-color: #1a191f;
-	  width: min(900px, 100vw);
+  background-color: #1a191f;
+  width: min(900px, 100vw);
   height: 600px;
-    border: 1px solid #1f2937;
+  border: 1px solid #1f2937;
   border-radius: 8px;
-  box-shadow: 0 20px 60px rgba(0,0,0,.45);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
 
   display: flex;
   flex-direction: column;
@@ -35,7 +35,6 @@ main {
   transition-timing-function: ease-out;
   transition-duration: 200ms;
 }
-
 
 main.maximized {
   width: 100vw;
@@ -63,14 +62,19 @@ header {
   padding: 0.5rem;
 }
 
-button.close { background: #ec6765; }
-button.minimize { background: #f2ca44; }
-button.maximize { background: #65c466; }
-
+button.close {
+  background: #ec6765;
+}
+button.minimize {
+  background: #f2ca44;
+}
+button.maximize {
+  background: #65c466;
+}
 
 section {
   padding: 0.5rem;
-  border-bottom: 1px solid #1f2937
+  border-bottom: 1px solid #1f2937;
 }
 
 section h1 {
@@ -87,12 +91,11 @@ section h1::before {
 
 .prompt input {
   background: transparent;
-   font-family: 'JetBrains Mono', monospace;
-   font-size: 1rem;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 1rem;
 
   color: #a8c8cf;
   border: none;
   outline: none;
   color: var(--foreground);
 }
-
