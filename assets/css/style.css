@@ -117,3 +117,9 @@ section h1::before {
   outline: none;
   color: var(--foreground);
 }
+
+.help a,
+.help a:visited {
+  color: var(--foreground);
+  text-decoration: none;
+}
