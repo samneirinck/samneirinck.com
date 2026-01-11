@@ -123,3 +123,8 @@ section h1::before {
   color: var(--foreground);
   text-decoration: none;
 }
+
+.ls-item {
+  color: #65c466;
+  margin-right: 1em;
+}
