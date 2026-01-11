@@ -55,10 +55,35 @@ function handleCat(args) {
 	return content;
 }
 
+function handleEcho(args) {
+	return args.join(' ');
+}
+
+function handleDate() {
+	return new Date().toString();
+}
+
+function handlePwd() {
+	return '/home/sam';
+}
+
+let commandHistory = [];
+
+function handleHistory() {
+	if (commandHistory.length === 0) {
+		return '';
+	}
+	return commandHistory.map((cmd, i) => `${i + 1}  ${cmd}`).join('<br>');
+}
+
 document.getElementById("promptForm").addEventListener("submit", (event) => {
 	const input = promptInput.value.trim().split(/\s+/);
 	const command = input[0];
 	const args = input.slice(1);
+
+	if (promptInput.value.trim()) {
+		commandHistory.push(promptInput.value.trim());
+	}
 
 	const section = document.createElement("section");
 	const cmd = document.createElement("h1");
@@ -79,6 +104,19 @@ document.getElementById("promptForm").addEventListener("submit", (event) => {
 			promptInput.value = '';
 			event.preventDefault();
 			return;
+		case 'date':
+			output = handleDate();
+			break;
+		case 'echo':
+			output = handleEcho(args);
+			break;
+
+		case 'history':
+			output = handleHistory();
+			break;
+		case 'pwd':
+			output = handlePwd();
+			break;
 		{{- range where .Site.RegularPages "Params.command" "!=" "" }}
 		case '{{ .Params.command }}':
 			output = `{{ .Content | htmlUnescape }}`;
@@ -106,7 +144,7 @@ function scrollToBottom(el) {
 }
 
 // Tab completion
-const commands = ['cat', 'clear', 'help', 'ls', 'whoami'];
+const commands = ['cat', 'clear', 'date', 'echo', 'help', 'history', 'ls', 'pwd', 'whoami'];
 let lastTabTime = 0;
 let lastTabInput = '';
 
