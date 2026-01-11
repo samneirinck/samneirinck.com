@@ -47,7 +47,7 @@ document.getElementById("promptForm").addEventListener("submit", (event) => {
 	}
 	terminalContent.appendChild(section);
 	scrollToBottom(terminalContent);
-	
+
 	promptInput.value = '';
 	event.preventDefault();
 });
@@ -57,3 +57,4 @@ function scrollToBottom(el) {
 		el.scrollTop = el.scrollHeight;
 	});
 }
+
