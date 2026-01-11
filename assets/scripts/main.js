@@ -6,7 +6,7 @@ const promptSection = document.getElementById("promptSection");
 // Files generated from Hugo content (pages with file: true)
 const files = {
 	{{- range where .Site.RegularPages "Params.file" true }}
-	'{{ with .Params.displayName }}{{ . }}{{ else }}{{ $.File.BaseFileName }}{{ end }}': `{{ .Content | htmlUnescape }}`,
+	'{{ with .Params.displayName }}{{ . }}{{ else }}{{ .File.BaseFileName }}{{ end }}': `{{ .Content | htmlUnescape }}`,
 	{{- end }}
 };
 
