@@ -64,7 +64,7 @@ document.getElementById("promptForm").addEventListener("submit", (event) => {
 		case 'cat':
 			output = handleCat(args);
 			break;
-		{{- range where .Site.RegularPages "Section" "commands" }}
+		{{- range where .Site.RegularPages "Params.command" "!=" "" }}
 		case '{{ .Params.command }}':
 			output = `{{ .Content | htmlUnescape }}`;
 			break;
