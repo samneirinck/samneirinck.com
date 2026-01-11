@@ -4,7 +4,7 @@
 		<title>Sam Neirinck</title>
 		{{ with resources.Get "css/style.css" }}
 		<link rel="stylesheet" href="{{ .RelPermalink }}">
-		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<meta name="viewport" content="width=device-width,initial-scale=1">
 		{{ end }}
 	</head>
 	<body>
@@ -21,11 +21,11 @@
 			<section id="promptSection" class="prompt">
 				<form id="promptForm">
 					<label for="prompt">$</label>
-					<input id="prompt" type="text" autofocus autocomplete="off" spellcheck="false" required autocapitalize="off">
+					<input id="prompt" type="text" autofocus autocomplete="off" spellcheck="false" required autocapitalize="off" placeholder="type a command">
 				</form>
 			</section>
 		</main>
-		{{ with resources.Get "scripts/main.js" }}
+		{{ with resources.Get "scripts/main.js" | resources.ExecuteAsTemplate "scripts/main.js" . }}
 		<script src="{{ .RelPermalink }}"></script>
 		{{ end }}
 	</body>

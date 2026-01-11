@@ -27,23 +27,16 @@ document.getElementById("promptForm").addEventListener("submit", (event) => {
 	section.appendChild(cmd);
 
 
-	let output = null;
 	switch (command) {
-		case 'whoami':
-			output = document.createElement("p");
-			output.textContent = "Sam Neirinck - Software Engineer";
+		{{- range where .Site.RegularPages "Section" "commands" }}
+		case '{{ .Params.command }}':
+			section.innerHTML = `{{ .Content | htmlUnescape }}`;
 			break;
+		{{- end }}
 		default:
-			output = document.createElement("p");
+			const output = document.createElement("p");
 			output.textContent = `Unknown command: ${command}`;
-
-	}
-	if (output) {
-		section.appendChild(output);
-
-
-
-
+			section.appendChild(output);
 	}
 	terminalContent.appendChild(section);
 	scrollToBottom(terminalContent);
@@ -57,4 +50,5 @@ function scrollToBottom(el) {
 		el.scrollTop = el.scrollHeight;
 	});
 }
+
 
