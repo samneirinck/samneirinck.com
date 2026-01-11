@@ -6,7 +6,7 @@ const promptSection = document.getElementById("promptSection");
 // Files generated from Hugo content (pages with file: true)
 const files = {
 	{{- range where .Site.RegularPages "Params.file" true }}
-	'{{ .File.BaseFileName }}': `{{ .Content | htmlUnescape }}`,
+	'{{ with .Params.displayName }}{{ . }}{{ else }}{{ $.File.BaseFileName }}{{ end }}': `{{ .Content | htmlUnescape }}`,
 	{{- end }}
 };
 
@@ -25,8 +25,18 @@ document.getElementById('maximizeTerminal').addEventListener('click', () => {
 	}
 })
 
-function handleLs() {
-	const items = Object.keys(files);
+function handleLs(args) {
+	const showAll = args.includes('-a');
+	let items = Object.keys(files);
+
+	if (!showAll) {
+		items = items.filter(item => !item.startsWith('.'));
+	}
+
+	if (items.length === 0) {
+		return '';
+	}
+
 	return items.map(item => `<span class="ls-item">${item}</span>`).join('  ');
 }
 
