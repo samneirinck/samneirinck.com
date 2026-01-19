@@ -134,6 +134,15 @@ section h1::before {
   content: none;
 }
 
+.resume h1 {
+  margin-top: 3em;
+  margin-bottom: 0.75em;
+}
+
+.resume p {
+  margin: 0.5em 0;
+}
+
 .resume pre {
   color: #65c466;
   margin: 0;
@@ -142,6 +151,7 @@ section h1::before {
 
 .resume .subtitle {
   color: #a8c8cf;
+  margin-bottom: 1em;
 }
 
 .resume .muted {
@@ -166,6 +176,7 @@ section h1::before {
 
 .resume .nested {
   padding-left: 1em;
+  margin-top: 0.75em;
 }
 
 /* Resume print styles */
