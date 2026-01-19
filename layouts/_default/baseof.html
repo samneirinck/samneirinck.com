@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Sam Neirinck</title>
+		<title>samneirinck.com - {{ lower .Title }}</title>
 		{{ with resources.Get "css/style.css" }}
 		<link rel="stylesheet" href="{{ .RelPermalink }}">
 		{{ end }}
@@ -16,7 +16,7 @@
 				<button id="closeTerminal" title="Close" class="close"></button>
 				<button id="minimizeTerminal" title="Minimize" class="minimize"></button>
 				<button id="maximizeTerminal" title="Maximize" class="maximize"></button>
-				<span>samneirinck.com - home</span>
+				<span>samneirinck.com - {{ lower .Title }}</span>
 			</header>
 			<section class="terminal-content">
 				{{- block "main" . }}{{- end }}

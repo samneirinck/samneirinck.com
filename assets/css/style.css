@@ -128,3 +128,114 @@ section h1::before {
   color: #65c466;
   margin-right: 1em;
 }
+
+/* Resume styles */
+.resume h1::before {
+  content: none;
+}
+
+.resume pre {
+  color: #65c466;
+  margin: 0;
+  font-size: 0.7em;
+}
+
+.resume .subtitle {
+  color: #a8c8cf;
+}
+
+.resume .muted {
+  color: #888;
+}
+
+.resume .muted a {
+  color: #888;
+}
+
+.resume .highlight {
+  color: #f2ca44;
+}
+
+.resume .accent {
+  color: #a8c8cf;
+}
+
+.resume .success {
+  color: #65c466;
+}
+
+.resume .nested {
+  padding-left: 1em;
+}
+
+/* Resume print styles */
+@media print {
+  body {
+    background: white;
+    display: block;
+  }
+
+  .terminal {
+    background: white;
+    border: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .terminal header,
+  .prompt {
+    display: none;
+  }
+
+  .terminal-content {
+    overflow: visible;
+  }
+
+  .terminal-content section {
+    border: none;
+  }
+
+  .resume {
+    color: #222;
+  }
+
+  .resume pre {
+    color: #222;
+  }
+
+  .resume h1 {
+    color: #222;
+    font-size: 1.1em;
+    margin-top: 1em;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .resume .subtitle {
+    color: #444;
+  }
+
+  .resume .muted {
+    color: #666;
+  }
+
+  .resume .muted a {
+    color: #666;
+  }
+
+  .resume .highlight {
+    color: #222;
+    font-weight: bold;
+  }
+
+  .resume .accent {
+    color: #444;
+  }
+
+  .resume .success {
+    color: #222;
+  }
+}
